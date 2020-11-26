@@ -1,0 +1,77 @@
+<!-- <li *ngFor="let data of data"> -->
+<!-- </li>-->
+<div class="mdl-layout mdl-js-layout mdl-layout__header--scroll mdl-layout--fixed-header">
+    <header class="mdl-layout__header mdl-layout__header--primary">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">Aqua Score</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation -->
+            <nav class="mdl-navigation mdl-cell--hide-phone">
+                <a class="mdl-navigation__link" href="/home">Home</a>
+                <a class="mdl-navigation__link" href="/myteam">My team</a>
+                <a class="mdl-navigation__link" href="/mygroups">My groups</a>
+                <a class="mdl-navigation__link" href="/newgroup">New group</a>
+                <a class="mdl-navigation__link" href="/calendar">Race calendar</a>
+                <a class="mdl-navigation__link" href="/calendarupload">Race calendar data</a>
+            </nav>
+        </div>
+    </header>
+    <div class="mdl-layout__drawer mdl-layout--fixed-drawer">
+        <span class="mdl-layout-title">Aqua Score</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="/home">Home</a>
+            <a class="mdl-navigation__link" href="/myteam">My team</a>
+            <a class="mdl-navigation__link" href="/mygroups">My groups</a>
+            <a class="mdl-navigation__link" href="/newgroup">New group</a>
+            <a class="mdl-navigation__link" href="/calendar">Race calendar</a>
+            <a class="mdl-navigation__link" href="/calendarupload">Race calendar data</a>
+        </nav>
+    </div>
+
+    <main class="mdl-layout__content">
+
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--6-col-phone">
+            <a (click) ="viewCalander()">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <select class="mdl-textfield__input" id="group" name="octane">
+                    <option *ngFor="let group of group">{{ group.name }}</option>
+                </select>
+                <label class="mdl-textfield__label" for="group"></label>
+            </div>
+            </a>
+        </div>
+        <div class="mdl-cell mdl-cell--9-col mdl-cell--8-col-tablet mdl-cell--6-col-phone">
+            <div class="mdl-list" *ngFor="let race of races">
+                <a (click)="viewResults(race)">
+                    <div
+                        class="mdl-cell mdl-grid mdl-grid--no-spacing mdl-shadow--2dp mdl-cell--12-col-desktop mdl-cell--8-col-tablet">
+                        <div
+                            class="mdl-cell mdl-cell--3-col-desktop mdl-cell--1-col-tablet mdl-color--primary mdl-color-text--white mdl-card__title">
+                            <i class="material-icons">alarm</i> <span> {{race['date'].toLocaleTimeString()}} </span>
+                        </div>
+                        <div
+                            class="card-wide mdl-cell mdl-card mdl-cell--9-col-desktop mdl-cell--7-col-tablet mdl-list__item">
+                            <div class="mdl-card__title">
+                                <h3 class="mdl-card__title-text">{{race['location']}} GP</h3>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                {{race['date'].toLocaleDateString()}}
+                            </div>
+                        </div><!-- card -->
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    </main>
+</div>
+
+<!-- <... *ngFor="let group of groups"> for the group in groups -->
+<!-- <... *ngFor="let players of group"> for players in the group -->
+
+
+
+

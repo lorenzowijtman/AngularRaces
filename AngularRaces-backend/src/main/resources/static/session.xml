@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:mysql://195.201.36.173:3306/persistencepractise</property>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <mapping class="nl.hva.aquadisbackend.models.DriverEntity"/>
+      <mapping resource="static/mapping.xml"/>
+      <mapping class="nl.hva.aquadisbackend.models.GameGroupEntity"/>
+      <mapping class="nl.hva.aquadisbackend.models.PointsEntity"/>
+      <mapping class="nl.hva.aquadisbackend.models.RaceEntity"/>
+      <mapping class="nl.hva.aquadisbackend.models.RacedriverEntity"/>
+      <mapping class="nl.hva.aquadisbackend.models.TeamSelectionEntity"/>
+      <mapping class="nl.hva.aquadisbackend.models.TeamSelectiondriverEntity"/>
+      <mapping class="nl.hva.aquadisbackend.models.UserEntity"/>
+      <mapping class="nl.hva.aquadisbackend.models.UsergroupEntity"/>
+
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>

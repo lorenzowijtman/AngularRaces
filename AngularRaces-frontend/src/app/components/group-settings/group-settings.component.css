@@ -1,0 +1,16 @@
+.succes {
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    background-color: blue;
+    color: white;
+}
+
+.userlist {
+    border: 2px solid #3D51B5;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+  }

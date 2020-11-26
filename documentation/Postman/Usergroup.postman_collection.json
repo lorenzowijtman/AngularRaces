@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "bc43a2a7-1a00-445c-b0ad-dfa3f74cee72",
+		"name": "Usergroup",
+		"description": "combination of users in a group, API calls\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/usergroupEntities",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"iduser\" : 1,\n\t\"idgroup\" : 1,\n\t\"is_admin\" : true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/usergroupEntities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usergroupEntities"
+					]
+				},
+				"description": "post user to usergroup"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/usergroups/id/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/usergroups/id/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usergroups",
+						"id",
+						"1"
+					]
+				},
+				"description": "gets user groups based on userID"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/usergroups/all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/usergroups/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usergroups",
+						"all"
+					]
+				},
+				"description": "gets all the usergroups"
+			},
+			"response": []
+		}
+	]
+}

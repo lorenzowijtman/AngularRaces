@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "9ba2e31b-209f-47e5-8fab-bd7376f1cbe9",
+		"name": "drivers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/driverEntities",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 1,\n\t\"firstname\" : \"max\",\n\t\"lastname\" : \"verstappen\",\n\t\"cost\" : 500000\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/driverEntities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"driverEntities"
+					]
+				},
+				"description": "save a driver to database"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/drivers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/drivers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"drivers"
+					]
+				},
+				"description": "gets all drivers"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/driverEntities/search/findByLastname?lastname=verstappen",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/driverEntities/search/findByLastname?lastname=verstappen",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"driverEntities",
+						"search",
+						"findByLastname"
+					],
+					"query": [
+						{
+							"key": "lastname",
+							"value": "verstappen"
+						}
+					]
+				},
+				"description": "find driver by lastname"
+			},
+			"response": []
+		}
+	]
+}

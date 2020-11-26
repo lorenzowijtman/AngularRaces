@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "63a18e97-0666-41ca-bd38-c25f318d44f1",
+		"name": "teamselections",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/teamselections",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/teamselections",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teamselections"
+					]
+				},
+				"description": "gets all team selections"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/teamSelectionEntities",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/teamselection/new/{idteamselection}/{name}/{budget}/{iduser}/{VP}/{driverOne}/{driverTwo}/{driverThree}/{driverFour}/{driverFive}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teamselection",
+						"new",
+						"{idteamselection}",
+						"{name}",
+						"{budget}",
+						"{iduser}",
+						"{VP}",
+						"{driverOne}",
+						"{driverTwo}",
+						"{driverThree}",
+						"{driverFour}",
+						"{driverFive}"
+					]
+				},
+				"description": "put for teamslection"
+			},
+			"response": []
+		}
+	]
+}

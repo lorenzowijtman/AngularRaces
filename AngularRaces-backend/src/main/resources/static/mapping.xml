@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="nl.hva.aquadisbackend.models.DriverEntity" table="driver" schema="persistencepractise">
+        <id name="iddriver" column="iddriver"/>
+        <property name="firstname" column="firstname"/>
+        <property name="lastname" column="lastname"/>
+        <property name="cost" column="cost"/>
+    </class>
+    <class name="nl.hva.aquadisbackend.models.GameGroupEntity" table="game_group" schema="persistencepractise">
+        <id name="idgroup" column="idgroup"/>
+        <property name="name" column="name"/>
+        <property name="adminId" column="admin_id"/>
+    </class>
+    <class name="nl.hva.aquadisbackend.models.PointsEntity" table="points" schema="persistencepractise">
+        <id name="idpoints" column="idpoints"/>
+        <property name="gamePoints" column="game_points"/>
+        <many-to-one name="usergroup" class="nl.hva.aquadisbackend.models.UsergroupEntity">
+            <column name="iduser"/>
+            <column name="idgroup"/>
+        </many-to-one>
+    </class>
+    <class name="nl.hva.aquadisbackend.models.RaceEntity" table="race" schema="persistencepractise">
+        <composite-id mapped="true" class="nl.hva.aquadisbackend.models.RaceEntityPK">
+            <key-property name="idrace" column="idrace"/>
+            <key-property name="idgroup" column="idgroup"/>
+        </composite-id>
+        <property name="date" column="date"/>
+        <property name="location" column="location"/>
+        <property name="time" column="time"/>
+    </class>
+    <class name="nl.hva.aquadisbackend.models.RacedriverEntity" table="racedriver" schema="persistencepractise">
+        <composite-id mapped="true" class="nl.hva.aquadisbackend.models.RacedriverEntityPK">
+            <key-property name="idrace" column="idrace"/>
+            <key-property name="idgroup" column="idgroup"/>
+            <key-property name="iddriver" column="iddriver"/>
+        </composite-id>
+        <property name="position" column="position"/>
+        <property name="finished" column="finished"/>
+    </class>
+    <class name="nl.hva.aquadisbackend.models.TeamSelectionEntity" table="teamSelection" schema="persistencepractise">
+        <composite-id mapped="true" class="nl.hva.aquadisbackend.models.TeamSelectionEntityPK">
+            <key-property name="idteamSelection" column="idteamSelection"/>
+            <key-property name="iduser" column="iduser"/>
+        </composite-id>
+        <property name="name" column="name"/>
+        <property name="budget" column="budget"/>
+        <many-to-one name="userByIduser" class="nl.hva.aquadisbackend.models.UserEntity">
+            <column name="iduser"/>
+        </many-to-one>
+    </class>
+    <class name="nl.hva.aquadisbackend.models.TeamSelectiondriverEntity" table="teamSelectiondriver"
+           schema="persistencepractise">
+        <composite-id mapped="true" class="nl.hva.aquadisbackend.models.TeamSelectiondriverEntityPK">
+            <key-property name="idteamSelection" column="idteamSelection"/>
+            <key-property name="iduser" column="iduser"/>
+            <key-property name="iddriver" column="iddriver"/>
+        </composite-id>
+    </class>
+    <class name="nl.hva.aquadisbackend.models.UserEntity" table="user" schema="persistencepractise">
+        <id name="iduser" column="iduser"/>
+        <property name="nickname" column="nickname"/>
+        <property name="password" column="password"/>
+        <property name="email" column="email"/>
+    </class>
+    <class name="nl.hva.aquadisbackend.models.UsergroupEntity" table="usergroup" schema="persistencepractise">
+        <composite-id mapped="true" class="nl.hva.aquadisbackend.models.UsergroupEntityPK">
+            <key-property name="iduser" column="iduser"/>
+            <key-property name="idgroup" column="idgroup"/>
+        </composite-id>
+        <property name="isAdmin" column="isAdmin"/>
+    </class>
+    <class name="nl.hva.aquadisbackend.models.UsergroupEntity" table="usergroup" schema="persistencepractise">
+        <composite-id mapped="true" class="nl.hva.aquadisbackend.models.UsergroupEntityPK">
+            <key-property name="iduser" column="iduser"/>
+            <key-property name="idgroup" column="idgroup"/>
+        </composite-id>
+        <property name="isAdmin" column="is_admin"/>
+    </class>
+    <class name="nl.hva.aquadisbackend.models.TeamSelectionEntity" table="teamSelection" schema="persistencepractise">
+        <composite-id mapped="true" class="nl.hva.aquadisbackend.models.TeamSelectionEntityPK">
+            <key-property name="idteamSelection" column="idteam_selection"/>
+            <key-property name="iduser" column="iduser"/>
+        </composite-id>
+        <property name="name" column="name"/>
+        <property name="budget" column="budget"/>
+    </class>
+    <class name="nl.hva.aquadisbackend.models.TeamSelectionEntity" table="team_selection" schema="persistencepractise">
+        <composite-id mapped="true" class="nl.hva.aquadisbackend.models.TeamSelectionEntityPK">
+            <key-property name="idteamSelection" column="idteam_selection"/>
+            <key-property name="iduser" column="iduser"/>
+        </composite-id>
+        <property name="name" column="name"/>
+        <property name="budget" column="budget"/>
+    </class>
+    <class name="nl.hva.aquadisbackend.models.TeamSelectiondriverEntity" table="team_selectiondriver"
+           schema="persistencepractise">
+        <composite-id mapped="true" class="nl.hva.aquadisbackend.models.TeamSelectiondriverEntityPK">
+            <key-property name="idteamSelection" column="idteam_selection"/>
+            <key-property name="iduser" column="iduser"/>
+            <key-property name="iddriver" column="iddriver"/>
+        </composite-id>
+    </class>
+    <class name="nl.hva.aquadisbackend.models.RaceEntity" table="race" schema="persistencepractise">
+        <composite-id mapped="true" class="nl.hva.aquadisbackend.models.RaceEntityPK">
+            <key-property name="idrace" column="idrace"/>
+            <key-property name="idgroup" column="idgroup"/>
+        </composite-id>
+        <property name="date" column="date"/>
+        <property name="location" column="location"/>
+        <property name="time" column="time"/>
+    </class>
+    <class name="nl.hva.aquadisbackend.models.RaceEntity" table="race" schema="persistencepractise">
+        <composite-id mapped="true" class="nl.hva.aquadisbackend.models.RaceEntityPK">
+            <key-property name="idrace" column="idrace"/>
+            <key-property name="idgroup" column="idgroup"/>
+        </composite-id>
+        <property name="date" column="date"/>
+        <property name="location" column="location"/>
+    </class>
+    <class name="nl.hva.aquadisbackend.models.RacedriverEntity" table="racedriver" schema="persistencepractise">
+        <composite-id mapped="true" class="nl.hva.aquadisbackend.models.RacedriverEntityPK">
+            <key-property name="idrace" column="idrace"/>
+            <key-property name="iddriver" column="iddriver"/>
+        </composite-id>
+        <property name="startingPosition" column="starting_position"/>
+        <property name="finishPosition" column="finish_position"/>
+        <property name="finished" column="finished"/>
+    </class>
+    <class name="nl.hva.aquadisbackend.models.RaceEntity" table="race" schema="persistencepractise">
+        <id name="idrace" column="idrace"/>
+        <property name="date" column="date"/>
+        <property name="location" column="location"/>
+    </class>
+    <class name="nl.hva.aquadisbackend.models.TeamSelectionEntity" table="team_selection" schema="persistencepractise">
+        <composite-id mapped="true" class="nl.hva.aquadisbackend.models.TeamSelectionEntityPK">
+            <key-property name="idteamSelection" column="idteam_selection"/>
+            <key-property name="iduser" column="iduser"/>
+        </composite-id>
+        <property name="name" column="name"/>
+        <property name="budget" column="budget"/>
+        <property name="verstappenPosition" column="verstappen_position"/>
+    </class>
+    <class name="nl.hva.aquadisbackend.models.RaceEntity" table="race" schema="persistencepractise">
+        <id name="idrace" column="idrace"/>
+        <property name="date" column="date"/>
+        <property name="location" column="location"/>
+        <property name="idgroup" column="idgroup"/>
+    </class>
+</hibernate-mapping>

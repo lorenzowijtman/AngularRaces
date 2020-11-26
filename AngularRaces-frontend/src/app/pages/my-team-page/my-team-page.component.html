@@ -1,0 +1,212 @@
+<div class="mdl-layout mdl-js-layout mdl-layout__header--scroll mdl-layout--fixed-header">  <!-- add mdl-layout--fixed-header -->
+    <header class="mdl-layout__header mdl-layout__header--primary">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">Aqua Score</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation -->
+            <nav class="mdl-navigation mdl-cell--hide-phone"> <!-- add mdl-cell--hide-phone -->
+                <a class="mdl-navigation__link" href="/home">Home</a>
+                <a class="mdl-navigation__link" href="/myteam">My team</a>
+                <a class="mdl-navigation__link" href="/mygroups">My groups</a>
+                <a class="mdl-navigation__link" href="/newgroup">New group</a>
+                <a class="mdl-navigation__link" href="/calendar">Race calendar</a>
+                <a class="mdl-navigation__link" href="/calendarupload">Race calendar data</a>
+            </nav>
+        </div>
+    </header>
+    <div class="mdl-layout__drawer mdl-layout--fixed-drawer"> <!-- add mdl-layout--fixed-drawer AND mdl-cell--hide-desktop -->
+        <span class="mdl-layout-title">Aqua Score</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="/home">Home</a>
+            <a class="mdl-navigation__link" href="/myteam">My team</a>
+            <a class="mdl-navigation__link" href="/mygroups">My groups</a>
+            <a class="mdl-navigation__link" href="/newgroup">New group</a>
+            <a class="mdl-navigation__link" href="/calendar">Race calendar</a>
+            <a class="mdl-navigation__link" href="/calendarupload">Race calendar data</a>
+        </nav>
+    </div>
+<div class="container mdl-layout">
+    <div class="from-label  budget"><strong>Budget:</strong> {{ budget }}</div>
+    <h5>Select drivers to add to your team</h5>
+    <div class="mdl-grid">
+        <div class="mdl-cell--6-col">
+            <div class="mdl-grid">
+                <div class="mdl-cell--6-col">
+                    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Driver one</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <div class="mdl-selectfield mdl-js-selectfield">
+                                <select
+                                    class="mdl-selectfield__select"
+                                    id="driverOne"
+                                    name="driver">
+                                    <option *ngFor="let driver of drivers" (click)="update($event)"
+                                        >
+                                        {{ driver.lastname }}</option>
+                                        <option selected (click)="update(driverOne)"></option>                                
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdl-cell--6-col">
+                    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Driver Two</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <div class="mdl-selectfield mdl-js-selectfield">
+                                <select
+                                    class="mdl-selectfield__select"
+                                    id="driverTwo"
+                                    name="driver"
+                                >
+                                    <option *ngFor="let driver of drivers" (click)="update($event)"
+                                        >
+                                        {{ driver.lastname }}</option>
+                                        <option selected></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdl-cell--6-col">
+                    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Driver Three</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <div class="mdl-selectfield mdl-js-selectfield">
+                                <select
+                                    class="mdl-selectfield__select"
+                                    id="driverThree"
+                                    name="driver"
+                                >
+                                    <option *ngFor="let driver of drivers" (click)="update($event)"
+                                        >
+                                        {{ driver.lastname }}</option>
+                                        <option selected></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdl-cell--6-col">
+                    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Driver four</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <div class="mdl-selectfield mdl-js-selectfield">
+                                <select
+                                    class="mdl-selectfield__select"
+                                    id="driverFour"
+                                    name="driver"
+                                >
+                                    <option *ngFor="let driver of drivers" (click)="update($event)"
+                                        >
+                                        {{ driver.lastname }}</option>
+                                        <option selected></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdl-cell">
+                    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Driver five</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <div class="mdl-selectfield mdl-js-selectfield">
+                                <select
+                                    class="mdl-selectfield__select"
+                                    id="driverFive"
+                                    name="driver"
+                                >
+                                    <option *ngFor="let driver of drivers" (click)="update($event)"
+                                    >
+                                        {{ driver.lastname }}</option>
+                                        <option selected></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdl-cell">
+                    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Final position Max Verstappen</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <div class="mdl-selectfield mdl-js-selectfield">
+                                <select
+                                    class="mdl-selectfield__select"
+                                    id="mVPosition"
+                                    name="driver">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
+                                    <option>13</option>
+                                    <option>14</option>
+                                    <option>15</option>
+                                    <option>16</option>
+                                    <option>17</option>
+                                    <option>18</option>
+                                    <option>19</option>
+                                    <option>20</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="mdl-button mdl-js-button mdl-button--raised" (click)="confirmClick()">confirm selection</button>
+        </div>
+        <div class="mdl-cell--6-col">
+            <div class="mdl-grid">
+                <div class="mdl-cell">
+                    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Drivers</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <ul class="demo-list-item mdl-list">
+                                <li
+                                    class="mdl-list__item"
+                                    *ngFor="
+                                        let driver of drivers;
+                                        let firstname = firstname;
+                                        let lastname = lastname;
+                                        let cost = cost
+                                    "
+                                >
+                                    <span
+                                        class="mdl-list__item-primary-content"
+                                    >
+                                        {{ driver.firstname }}
+                                        {{ driver.lastname }} :
+                                        {{ driver.cost }}
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

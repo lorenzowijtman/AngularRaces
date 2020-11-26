@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "ad63e990-953b-4481-853b-3a3bfe7439d6",
+		"name": "Races",
+		"description": "API calls for race entities",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/races",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/races",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"races"
+					]
+				},
+				"description": "gets all races"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/raceEntities",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"idrace\" : 1,\n\t\"date\" : \"2019-01-12\",\n\t\"location\" : \"Monaco\",\n\t\"time\" : \"15:00 CEST\",\n\t\"idgroup\": 1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/raceEntities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"raceEntities"
+					]
+				},
+				"description": "saves a new race"
+			},
+			"response": []
+		}
+	]
+}

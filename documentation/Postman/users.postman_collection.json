@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "fbf55eec-8590-4201-8618-c57304b062bf",
+		"name": "users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				},
+				"description": "get a list of all users"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/userEntities/search/findByEmail?email=lorenzowijtman@hotmail.com",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/userEntities/search/findByEmail?email=lorenzowijtman@hotmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"userEntities",
+						"search",
+						"findByEmail"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "lorenzowijtman@hotmail.com"
+						}
+					]
+				},
+				"description": "get user by email"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/userEntities",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\t\"nickname\" : \"henkie\",\n\t\"email\" : \"lorenzowijtman@hotmail.com\",\n\t\"password\" : \"admin\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/userEntities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"userEntities"
+					]
+				},
+				"description": "save an user to database through JSON body"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/lorenzowijtman@hotmail.com",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/users/lorenzowijtman@hotmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"lorenzowijtman@hotmail.com"
+					]
+				},
+				"description": "gets user by email"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/userNickname/lorenzo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/users/userNickname/lorenzo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"userNickname",
+						"lorenzo"
+					]
+				},
+				"description": "gets userID by nickname"
+			},
+			"response": []
+		}
+	]
+}

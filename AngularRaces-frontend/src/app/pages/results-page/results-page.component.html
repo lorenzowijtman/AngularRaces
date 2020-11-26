@@ -1,0 +1,64 @@
+<div class="mdl-layout mdl-js-layout mdl-layout__header--scroll mdl-layout--fixed-header">
+    <header class="mdl-layout__header mdl-layout__header--primary">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">Aqua Score</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation -->
+            <nav class="mdl-navigation mdl-cell--hide-phone">
+                <a class="mdl-navigation__link" href="/home">Home</a>
+                <a class="mdl-navigation__link" href="/myteam">My team</a>
+                <a class="mdl-navigation__link" href="/mygroups">My groups</a>
+                <a class="mdl-navigation__link" href="/newgroup">New group</a>
+                <a class="mdl-navigation__link" href="/calendar">Race calendar</a>
+                <a class="mdl-navigation__link" href="/calendarupload">Race calendar data</a>
+            </nav>
+        </div>
+    </header>
+    <div class="mdl-layout__drawer mdl-layout--fixed-drawer">
+        <span class="mdl-layout-title">Aqua Score</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="/home">Home</a>
+            <a class="mdl-navigation__link" href="/myteam">My team</a>
+            <a class="mdl-navigation__link" href="/mygroups">My groups</a>
+            <a class="mdl-navigation__link" href="/newgroup">New group</a>
+            <a class="mdl-navigation__link" href="/calendar">Race calendar</a>
+            <a class="mdl-navigation__link" href="/calendarupload">Race calendar data</a>
+        </nav>
+    </div>
+
+    <main class="mdl-layout__content">
+
+    <div>
+       <div
+        class="mdl-cell mdl-cell--12-col mdl mdl-cell--5-offset mdl-cell--6-col-tablet mdl-cell--1-offset-tablet">
+        <h2>Race results</h2>
+       </div>
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" align="center">
+            <thead>
+            <tr>
+                <th class="mdl-data-table__cell--non-numeric">Racer</th>
+                <th class="mdl-data-table__cell--non-numeric">Team</th>
+                <th>Finish position</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let result of results" >
+                <td class="mdl-data-table__cell--non-numeric" >{{result[0]}}</td>
+                <td>{{result[1]}}</td>
+                <td>{{result[2]}}</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="mdl-card__actions mdl-card--border center-button align-center mdl-grid">
+            <a
+                    class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-cell mdl-cell--12-col text-center"
+                    (click)="editResults()"
+            >
+                edit results
+            </a>
+        </div>
+    </div>
+    </main>
+</div>

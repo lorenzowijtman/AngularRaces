@@ -1,0 +1,18 @@
+table,
+th,
+td {
+    border: 2px solid #3D51B5;
+    border-collapse: collapse;
+    text-align: center;
+    min-width: 100px;
+  
+}
+
+table {
+    box-shadow: 5px 10px 5px #3D51B5
+}
+
+.playerData {
+    border: 1px solid black;
+    border-collapse: collapse;
+}

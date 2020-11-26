@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "c9f3bcb7-c47a-4bd9-aec8-d660019bb63e",
+		"name": "groups",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/gamegroups",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/gamegroups",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gamegroups"
+					]
+				},
+				"description": "gets all game groups"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/gameGroupEntities/2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/gameGroupEntities/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gameGroupEntities",
+						"2"
+					]
+				},
+				"description": "gets specific group by ID"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/gamegroups/add/6/newtest/1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/gamegroups/add/6/newtest/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gamegroups",
+						"add",
+						"6",
+						"newtest",
+						"1"
+					]
+				},
+				"description": "adds new group and makes usergroup with the user inside\n6 = idgroup\nnewtest = name\n1 = iduser"
+			},
+			"response": []
+		}
+	]
+}

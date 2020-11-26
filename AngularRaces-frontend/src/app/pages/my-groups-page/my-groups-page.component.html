@@ -1,0 +1,65 @@
+<div class="mdl-layout mdl-js-layout mdl-layout__header--scroll mdl-layout--fixed-header">
+    <header class="mdl-layout__header mdl-layout__header--primary">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">Aqua Score</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation -->
+            <nav class="mdl-navigation mdl-cell--hide-phone">
+                <a class="mdl-navigation__link" href="/home">Home</a>
+                <a class="mdl-navigation__link" href="/myteam">My team</a>
+                <a class="mdl-navigation__link" href="/mygroups">My groups</a>
+                <a class="mdl-navigation__link" href="/newgroup">New group</a>
+                <a class="mdl-navigation__link" href="/calendar">Race calendar</a>
+                <a class="mdl-navigation__link" href="/calendarupload">Race calendar data</a>
+            </nav>
+        </div>
+    </header>
+    <div class="mdl-layout__drawer mdl-layout--fixed-drawer">
+        <span class="mdl-layout-title">Aqua Score</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="/home">Home</a>
+            <a class="mdl-navigation__link" href="/myteam">My team</a>
+            <a class="mdl-navigation__link" href="/mygroups">My groups</a>
+            <a class="mdl-navigation__link" href="/newgroup">New group</a>
+            <a class="mdl-navigation__link" href="/calendar">Race calendar</a>
+            <a class="mdl-navigation__link" href="/calendarupload">Race calendar data</a>
+        </nav>
+    </div>
+
+    <main class="mdl-layout__content">
+
+        <div class="mdl-typography--text-center" *ngIf="noObject">
+            <p>It seems like you haven't been added to a group. Please ask your admin!</p>
+        </div>
+
+        <div class="mdl-list" *ngFor="let i = index; let group of groups2">
+            <a (click)="groupBtnClick()">
+                <div class="mdl-cell mdl-grid mdl-grid--no-spacing mdl-shadow--2dp mdl-cell--6-col-desktop mdl-cell--3-offset-desktop mdl-cell--6-col-tablet mdl-cell--1-offset-tablet">
+
+                    <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--1-col-tablet mdl-color--primary mdl-color-text--white mdl-card__title">
+                        <i class="material-icons">person</i> <span> {{usernames[i].length}} </span>
+                    </div>
+
+                    <div class="card-wide mdl-cell mdl-card mdl-cell--9-col-desktop mdl-cell--7-col-tablet mdl-list__item">
+                        <div class="mdl-card__title">
+                            <h5>{{group}}</h5>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <ul class="demo-list-item mdl-list" *ngFor="let user of usernames[i]">
+                                <li class="mdl-list__item">
+                                    <span class="mdl-list__item-primary-content">
+                                        {{user.nickname}}
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!-- card -->
+
+                </div>
+            </a>
+        </div>
+
+    </main>
+</div>

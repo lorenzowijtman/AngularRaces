@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "5f53595a-8688-4bb8-8579-f414be49ef5d",
+		"name": "Racedriver",
+		"description": "results of a race per driver\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/racedriverEntities",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"idrace\" : 1,\n\t\"iddriver\" : 22,\n\t\"startingPosition\": 1,\n\t\"finishPosition\": 2,\n\t\"finished\": 1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/racedriverEntities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"racedriverEntities"
+					]
+				},
+				"description": "saves a result from driver"
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>Welcome to Aqua Score</h1>
+
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input
+            class="mdl-textfield__input"
+            type="email"
+            id="email"
+            required
+            placeholder="E-mail"
+        />
+    </div>
+
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input
+            class="mdl-textfield__input"
+            type="password"
+            id="password"
+            required
+            placeholder="Password"
+        />
+    </div>
+
+    <button
+        type="submit"
+        value="Login"
+        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+        (click)="loginBtnClick()"
+    >
+        Login
+    </button>
+
+    <p id="registerLink">
+        Don't have an account yet? <br/>
+        <a routerLink="/register">Click here to register</a>
+    </p>
+</div>
+
+<!-- ng-Pattern="[a-z]*[0-9]*@[a-z]*[0-9]*.(nl|com|org|xxx|pizza|ms|net|int|edu|baby)" bij input veld van email invoegen -->

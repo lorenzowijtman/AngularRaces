@@ -1,0 +1,20 @@
+.container {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+
+
+
+.mdl-list__item {
+    font-size: 15px;
+}
+
+.mdl-grid {
+    justify-content: center;
+}
+
+.budget {
+    font-size: 20px;
+    margin-top: 10px;
+}

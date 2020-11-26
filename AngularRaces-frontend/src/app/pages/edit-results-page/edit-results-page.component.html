@@ -1,0 +1,58 @@
+<div class="mdl-layout mdl-js-layout mdl-layout__header--scroll mdl-layout--fixed-header">
+    <header class="mdl-layout__header mdl-layout__header--primary">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">Aqua Score</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation -->
+            <nav class="mdl-navigation mdl-cell--hide-phone">
+                <a class="mdl-navigation__link" href="/home">Home</a>
+                <a class="mdl-navigation__link" href="/myteam">My team</a>
+                <a class="mdl-navigation__link" href="/mygroups">My groups</a>
+                <a class="mdl-navigation__link" href="/newgroup">New group</a>
+                <a class="mdl-navigation__link" href="/calendar">Race calendar</a>
+                <a class="mdl-navigation__link" href="/calendarupload">Race calendar data</a>
+            </nav>
+        </div>
+    </header>
+    <div class="mdl-layout__drawer mdl-layout--fixed-drawer">
+        <span class="mdl-layout-title">Aqua Score</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="/home">Home</a>
+            <a class="mdl-navigation__link" href="/myteam">My team</a>
+            <a class="mdl-navigation__link" href="/mygroups">My groups</a>
+            <a class="mdl-navigation__link" href="/newgroup">New group</a>
+            <a class="mdl-navigation__link" href="/calendar">Race calendar</a>
+            <a class="mdl-navigation__link" href="/calendarupload">Race calendar data</a>
+        </nav>
+    </div>
+
+    <main class="mdl-layout__content">
+
+    <div
+            class="mdl-cell mdl-grid mdl-grid--no-spacing mdl-cell--9-col-desktop mdl-cell--2-offset-desktop mdl-cell--6-col-tablet mdl-cell--1-offset-tablet">
+        <div class="col">
+            <h2>Edit Race</h2>
+
+            <div *ngFor="let driver of drivers" class="">
+                <span>{{driver.firstname}} {{driver.lastname}}</span>
+                <br>
+                <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input position" type="number" id="position">
+                        <label class="mdl-textfield__label" for="position">Position</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input dnf" type="checkbox" id="dnf">
+                    <label class="mdl-textfield__label" for="dnf">Did not finish</label>
+                </div>
+            </div>
+
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+                    (click)="editRace()">
+                edit
+            </button>
+        </div>
+    </div>
+    </main>
+</div>
